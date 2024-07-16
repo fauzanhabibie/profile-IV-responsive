@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Facebook-like dengan Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .cover-photo {
+            height: 300px;
+            background-image: url('ssss.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .profile-picture-container {
+    position: relative;
+    width: 194px;
+    height: 218px;
+    margin-top: -84px;
+}
+
+.profile-picture {
+    width: 186px;
+    height: 210px;
+    border-radius: 10px;
+    border: 4px solid white;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 2;
+}
+
+.profile-picture-border {
+    width: 194px;
+    height: 218px;
+    border-radius: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #002bff, #7a00ff);
+    background-size: 400%;
+    z-index: 1;
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.custom-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.custom-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 10px 0;  /* Menambah padding atas dan bawah navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #0056b3 !important;
+    font-size: 1.5rem;  /* Memperbesar ukuran font brand */
+}
+
+.navbar-nav {
+    margin-left: auto;  /* Memindahkan menu ke kanan */
+}
+
+.navbar-nav .nav-item {
+    margin: 0 20px;  /* Memperbesar jarak horizontal antar item */
+}
+
+.navbar-nav .nav-link {
+    color: #333 !important;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;  /* Memperbesar ukuran font menu */
+    padding: 10px 5px;  /* Menambah padding vertikal */
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0056b3;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3 !important;
+}
+
+.navbar-nav .nav-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+@media (max-width: 991px) {
+    .navbar-nav .nav-item {
+        margin: 10px 0;  /* Menyesuaikan margin untuk tampilan mobile */
+    }
+    
+    .navbar-nav {
+        margin-left: 0;  /* Reset margin left pada tampilan mobile */
+    }
+}
+.blue-transparent-card {
+    background-color: rgba(255, 0, 162, 0.1);  /* Warna biru dengan 10% opasitas */
+    border: none;
+    backdrop-filter: blur(10px);  /* Efek blur untuk latar belakang */
+    -webkit-backdrop-filter: blur(10px);  /* Untuk dukungan Safari */
+}
+
+.blue-transparent-card .card-title {
+    color: #000810;  /* Warna biru yang lebih gelap untuk judul */
+}
+
+.blue-transparent-card .table {
+    color: #000810;  /* Warna teks yang lebih gelap untuk keterbacaan */
+}
+
+.blue-transparent-card .table th {
+    color: #000810;  /* Warna biru yang lebih gelap untuk label */
+}
+.footer {
+  background: linear-gradient(90deg, #4270ef, #8fb1fb);
+  border-top: 1px solid #e7e7e7;
+}
+
+.footer h5 {
+  color: #f5f6f8;
+  margin-bottom: 1rem;
+}
+.footer p {
+  color: #f5f6f8;
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: #f5f6f8;
+}
+
+.footer a:hover {
+  color: #f5f6f8;
+}
+
+.footer address {
+  font-style: normal;
+  color: #f5f6f8;
+}
+.footer hr{
+    color: #f5f6f8;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar responsif -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Fauzan Habibie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pengajuan Cuti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Daftar Gaji</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Konten profil -->
+    <div class="container-fluid p-0">
+        <div class="cover-photo"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-picture-container">
+                        <div class="profile-picture-border"></div>
+                        <img src="aaaa.jpg" alt="Profile Picture" class="profile-picture">
+                    </div>
+                </div>
+                <div class="col-md-8 pt-3">
+                    <h1>John Doe</h1>
+                    <p>Johndoe1204</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                
+                <div class="col-md-4">
+                    <div class="card blue-transparent-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tentang</h5>
+                            <p class="card-text">Informasi tentang pengguna...</p>
+                        </div>
+                    </div>
+                </div>
+                
+   <div class="col-md-8">
+    <div class="card blue-transparent-card">
+        <div class="card-body">
+            <h5 class="card-title">Biodata Karyawan</h5>
+            <table class="table table-borderless">
+                <tbody>
+                   
+                    <tr>
+                        <th scope="row">NIP</th>
+                        <td>: 198501152010011001</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Jabatan</th>
+                        <td>: Staff IT</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Departemen</th>
+                        <td>: Teknologi Informasi</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tanggal Lahir</th>
+                        <td>: 15 Januari 1985</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alamat</th>
+                        <td>: Jl. Merdeka No. 123, Jakarta</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>: john.doe@perusahaan.com</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nomor Telepon</th>
+                        <td>: 081234567890</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tanggal Bergabung</th>
+                        <td>: 1 Januari 2010</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Status Karyawan</th>
+                        <td>: Karyawan Tetap</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+  </div>
+</div>
+ </div>
+   </div>
+    </div>
+
+
+<footer class="footer mt-5 py-3 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Tentang Kami</h5>
+        <p>Idekazans adalah perusahaan terkemuka dalam bidang teknologi informasi yang berdedikasi untuk memberikan solusi inovatif.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Tautan Cepat</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none">Beranda</a></li>
+          <li><a href="#" class="text-decoration-none">Layanan</a></li>
+          <li><a href="#" class="text-decoration-none">Karir</a></li>
+          <li><a href="#" class="text-decoration-none">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Hubungi Kami</h5>
+        <address>
+          <strong>Idekazans</strong><br>
+          Kota Tigaraksa<br>
+          Tangerang, Indonesia 12345<br>
+          <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>&copy; 2024 Idekazans. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
